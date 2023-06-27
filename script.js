@@ -1,5 +1,7 @@
-//your JS code here. If required.
-function applyPreferences() {
+// Function to set the font size and color as per user preferences
+function applyPreferences(event) {
+  event.preventDefault(); // Prevent form submission
+
   var fontSize = document.getElementById("fontsize").value;
   var fontColor = document.getElementById("fontcolor").value;
 
@@ -29,3 +31,9 @@ function retrievePreferences() {
     }
   }
 }
+
+// Add event listener to the form on submit
+document.querySelector("form").addEventListener("submit", applyPreferences);
+
+// Retrieve and apply preferences when the page loads
+window.addEventListener("load", retrievePreferences);
